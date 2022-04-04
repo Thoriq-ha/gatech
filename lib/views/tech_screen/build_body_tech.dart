@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:gatech/const.dart';
 import 'package:gatech/views/tech_screen/build_image.dart';
 
-class buildBodyTech extends StatefulWidget {
-  const buildBodyTech({
+class BuildBodyTech extends StatefulWidget {
+  const BuildBodyTech({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<buildBodyTech> createState() => _buildBodyTechState();
+  State<BuildBodyTech> createState() => _BuildBodyTechState();
 }
 
-class _buildBodyTechState extends State<buildBodyTech> {
+class _BuildBodyTechState extends State<BuildBodyTech> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -43,10 +43,10 @@ class _buildBodyTechState extends State<buildBodyTech> {
           const Expanded(
             child: TabBarView(
               children: [
-                buildImage(TECH_UPDATE),
-                buildImage(TECH_REVIEW),
-                buildImage(TECH_RECOMMENDED),
-                buildImage(TECH_TIP),
+                BuildImage(techUpdate),
+                BuildImage(techReview),
+                BuildImage(techRecomended),
+                BuildImage(techTip),
               ],
             ),
           )

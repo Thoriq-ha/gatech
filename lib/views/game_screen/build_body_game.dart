@@ -3,16 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:gatech/const.dart';
 import 'package:gatech/views/game_screen/build_image.dart';
 
-class buildBodyGame extends StatefulWidget {
-  const buildBodyGame({
+class BuildBodyGame extends StatefulWidget {
+  const BuildBodyGame({
     Key? key,
   }) : super(key: key);
 
   @override
-  State<buildBodyGame> createState() => _buildBodyGameState();
+  State<BuildBodyGame> createState() => _BuildBodyGameState();
 }
 
-class _buildBodyGameState extends State<buildBodyGame> {
+class _BuildBodyGameState extends State<BuildBodyGame> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
@@ -20,13 +20,12 @@ class _buildBodyGameState extends State<buildBodyGame> {
       child: Column(
         children: [
           FadeInDown(
-            delay: Duration(milliseconds: 500),
-            child: Container(
-                child: TabBar(
-                    labelColor: Colors.black,
-                    unselectedLabelColor: Colors.grey.shade600,
-                    indicatorColor: Colors.black,
-                    tabs: [
+            delay: const Duration(milliseconds: 500),
+            child: TabBar(
+                labelColor: Colors.black,
+                unselectedLabelColor: Colors.grey.shade600,
+                indicatorColor: Colors.black,
+                tabs: const [
                   Tab(
                     text: "E-Sport",
                   ),
@@ -39,15 +38,15 @@ class _buildBodyGameState extends State<buildBodyGame> {
                   Tab(
                     text: "Review",
                   )
-                ])),
+                ]),
           ),
-          Expanded(
+          const Expanded(
             child: TabBarView(
               children: [
-                buildImage(ESPORT_NEWS),
-                buildImage(GAME_PC),
-                buildImage(GAME_CONSOLE),
-                buildImage(GAME_REVIEW),
+                BuildImage(esportNews),
+                BuildImage(gamePc),
+                BuildImage(gameConsole),
+                BuildImage(gameReview),
               ],
             ),
           )

@@ -66,6 +66,6 @@ class TechScreen extends StatelessWidget {
             )
           ];
         },
-        body: const buildBodyTech());
+        body: const BuildBodyTech());
   }
 }

@@ -8,7 +8,7 @@ class NewsService {
     dynamic responseJson;
 
     try {
-      var _response = await Dio().get('$HOST$url');
+      var _response = await Dio().get('$host$url');
       responseJson = _response.data;
     } catch (e) {
       log(e.toString());

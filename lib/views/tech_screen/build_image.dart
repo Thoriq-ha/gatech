@@ -7,23 +7,24 @@ import 'package:gatech/viewmodels/game_viewmodel.dart';
 import 'package:gatech/views/detail_screen/detail_screen.dart';
 import 'package:provider/provider.dart';
 
-class buildImage extends StatefulWidget {
+class BuildImage extends StatefulWidget {
   final String _endpoint;
 
-  const buildImage(this._endpoint, {Key? key}) : super(key: key);
+  const BuildImage(this._endpoint, {Key? key}) : super(key: key);
 
   @override
-  State<buildImage> createState() => _buildImageState();
+  State<BuildImage> createState() => _BuildImageState();
 }
 
-class _buildImageState extends State<buildImage> {
+class _BuildImageState extends State<BuildImage> {
+  @override
   initState() {
+    super.initState();
     Provider.of<GameViewModel>(context, listen: false)
         .fetchGamesData(widget._endpoint);
   }
 
   Widget getPostList(BuildContext context, ApiResponse apiResponse) {
-    print(apiResponse.status);
     switch (apiResponse.status) {
       case Status.LOADING:
         return const Center(

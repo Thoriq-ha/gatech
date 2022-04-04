@@ -59,7 +59,7 @@ Widget viewHome(index) {
   } else if (index == 2) {
     return const GameScreen();
   } else if (index == 3) {
-    return ProfilScreen();
+    return const ProfilScreen();
   }
   return const Text('');
 }

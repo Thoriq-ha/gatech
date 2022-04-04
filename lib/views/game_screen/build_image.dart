@@ -7,37 +7,38 @@ import 'package:gatech/viewmodels/game_viewmodel.dart';
 import 'package:gatech/views/detail_screen/detail_screen.dart';
 import 'package:provider/provider.dart';
 
-class buildImage extends StatefulWidget {
+class BuildImage extends StatefulWidget {
   final String _endpoint;
 
-  buildImage(this._endpoint, {Key? key}) : super(key: key);
+  const BuildImage(this._endpoint, {Key? key}) : super(key: key);
 
   @override
-  State<buildImage> createState() => _buildImageState();
+  State<BuildImage> createState() => _BuildImageState();
 }
 
-class _buildImageState extends State<buildImage> {
+class _BuildImageState extends State<BuildImage> {
+  @override
   initState() {
+    super.initState();
     Provider.of<GameViewModel>(context, listen: false)
         .fetchGamesData(widget._endpoint);
   }
 
   Widget getPostList(BuildContext context, ApiResponse apiResponse) {
-    print(apiResponse.status);
     switch (apiResponse.status) {
       case Status.LOADING:
-        return Center(
+        return const Center(
           child: CircularProgressIndicator(),
         );
       case Status.COMPLETED:
-        return GridviewImage();
+        return const GridviewImage();
       case Status.ERROR:
-        return Center(
+        return const Center(
           child: Text('Please try again'),
         );
       case Status.INITIAL:
       default:
-        return Center(
+        return const Center(
           child: Text('Animy'),
         );
     }
@@ -62,7 +63,7 @@ class GridviewImage extends StatelessWidget {
         Provider.of<GameViewModel>(context).response.data as List<News>;
 
     return StaggeredGridView.countBuilder(
-      padding: EdgeInsets.all(0),
+      padding: const EdgeInsets.all(0),
       crossAxisCount: 4,
       controller: _scrollController,
       itemCount: _gameList.length,
@@ -71,8 +72,12 @@ class GridviewImage extends StatelessWidget {
           delay: Duration(milliseconds: index * 50),
           duration: Duration(milliseconds: (index * 50) + 800),
           child: GestureDetector(
-            onTap: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>DetailScreen(_gameList[index].key)));
+            onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          DetailScreen(_gameList[index].key)));
             },
             child: Container(
               color: Colors.black,
@@ -85,7 +90,7 @@ class GridviewImage extends StatelessWidget {
         );
       },
       staggeredTileBuilder: (int index) =>
-          new StaggeredTile.count(2, index.isEven ? 4 : 2),
+          StaggeredTile.count(2, index.isEven ? 4 : 2),
       mainAxisSpacing: 1.0,
       crossAxisSpacing: 1.0,
     );

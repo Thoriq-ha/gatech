@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 
-const HOST = 'https://the-lazy-media-api.vercel.app';
-const SEARCH = '/api/search?search=gta';
-const DETAIL_NEWS = '/api/detail/';
+const host = 'https://the-lazy-media-api.vercel.app';
+const search = '/api/search?search=gta';
+const detailNews = '/api/detail/';
 
 //KATEGORI GAMES
-const ESPORT_NEWS = '/api/games/e-sport/?page=1';
-const GAME_CONSOLE = '/api/games/console-game?page=1';
-const GAME_PC = '/api/games/pc?page=1';
-const GAME_REVIEW = '/api/games/review?page=1';
+const esportNews = '/api/games/e-sport/?page=1';
+const gameConsole = '/api/games/console-game?page=1';
+const gamePc = '/api/games/pc?page=1';
+const gameReview = '/api/games/review?page=1';
 
 //KATEGORI TECH
-const TECH_NEWS = '/api/tech/news?page=1';
-const TECH_UPDATE = '/api/tech/setup?page=1';
-const TECH_RECOMMENDED = '/api/tech/recommend?page=1';
-const TECH_REVIEW = '/api/tech/review?page=1';
-const TECH_TIP = '/api/tech/review?page=1';
+const techNews = '/api/tech/news?page=1';
+const techUpdate = '/api/tech/setup?page=1';
+const techRecomended = '/api/tech/recommend?page=1';
+const techReview = '/api/tech/review?page=1';
+const techTip = '/api/tech/review?page=1';
 
-
-const Color MY_DARK_PRIMARY = Color(0xFFF5F5F5);
+const Color myDarkPrimary = Color(0xFFF5F5F5);

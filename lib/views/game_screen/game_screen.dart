@@ -66,6 +66,6 @@ class GameScreen extends StatelessWidget {
             )
           ];
         },
-        body: const buildBodyGame());
+        body: const BuildBodyGame());
   }
 }

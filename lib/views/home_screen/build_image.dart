@@ -5,8 +5,8 @@ import 'package:gatech/views/detail_screen/detail_screen.dart';
 import 'package:provider/provider.dart';
 import 'package:vertical_card_pager/vertical_card_pager.dart';
 
-class buildImage extends StatelessWidget {
-  const buildImage({
+class BuildImage extends StatelessWidget {
+  const BuildImage({
     Key? key,
   }) : super(key: key);
 

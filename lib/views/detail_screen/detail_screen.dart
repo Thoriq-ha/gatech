@@ -17,8 +17,9 @@ class DetailScreen extends StatefulWidget {
 class _DetailScreenState extends State<DetailScreen> {
   @override
   initState() {
+    super.initState();
     Provider.of<DetailViewModel>(context, listen: false)
-        .fetchDetailData((DETAIL_NEWS + widget.dataKey));
+        .fetchDetailData((detailNews + widget.dataKey));
   }
 
   Widget getPostList(BuildContext context, ApiResponse apiResponse) {
@@ -47,7 +48,7 @@ class _DetailScreenState extends State<DetailScreen> {
     // return
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: MY_DARK_PRIMARY,
+        backgroundColor: myDarkPrimary,
         automaticallyImplyLeading: false,
         leading: IconButton(
           onPressed: () {
@@ -65,7 +66,6 @@ class _DetailScreenState extends State<DetailScreen> {
         centerTitle: false,
         elevation: 0,
       ),
-      // backgroundColor: Color(0xFF262D34),
       body: getPostList(context, _apiResponse),
     );
   }

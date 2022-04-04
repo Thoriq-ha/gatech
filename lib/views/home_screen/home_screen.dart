@@ -14,9 +14,11 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  @override
   initState() {
+    super.initState();
     Provider.of<GameViewModel>(context, listen: false)
-        .fetchGamesData(TECH_RECOMMENDED);
+        .fetchGamesData(techRecomended);
   }
 
   Widget getPostList(BuildContext context, ApiResponse apiResponse) {
@@ -26,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
           child: CircularProgressIndicator(),
         );
       case Status.COMPLETED:
-        return const buildImage();
+        return const BuildImage();
       case Status.ERROR:
         return const Center(
           child: Text('Please try again'),
@@ -50,7 +52,7 @@ class _HomeScreenState extends State<HomeScreen> {
             style: TextStyle(color: Colors.black87),
           ),
           centerTitle: true,
-          backgroundColor: MY_DARK_PRIMARY,
+          backgroundColor: myDarkPrimary,
           elevation: 0,
         ),
         body: getPostList(context, _apiResponse));
